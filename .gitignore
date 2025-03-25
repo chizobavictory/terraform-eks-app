@@ -1,4 +1,28 @@
-.terraform/
-.terraform.lock.hcl
+# Ignore Terraform state files (contains sensitive data)
 terraform.tfstate
 terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# Ignore private SSH keys (security risk)
+private-key/
+private-key/*.pem
+*.pem
+
+# Ignore Terraform plan output
+terraform.plan
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore Terraform cache and lock files
+.terraform/
+.terraform/*
+.terraform.lock.hcl
+
+# Ignore VS Code settings (if using VS Code)
+.vscode/
+
+# Ignore MacOS system files (if using Mac)
+.DS_Store
