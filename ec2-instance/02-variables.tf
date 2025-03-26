@@ -13,6 +13,21 @@ variable "instance_type" {
 variable "intance_keypair" {
   description = "The name of the EC2 key pair to use."
   type        = string
-  default = "terraform-key"
-  
+  default     = "terraform-key"
+}
+
+variable "instance_type_list" {
+  description = "List of instance types to choose from."
+  type        = list(string)
+  default     = ["t2.micro", "t2.small"]
+}
+
+variable "instance_type_map" {
+  description = "Map of instance types to choose from."
+  type        = map(string)
+  default = {
+    "dev" = "t2.micro"
+    "qa" = "t2.small"
+    "prod" = "t2.medium"
+  }
 }
